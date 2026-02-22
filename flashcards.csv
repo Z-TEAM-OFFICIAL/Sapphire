@@ -1,0 +1,85 @@
+What is the standard file header for a Sapphire script?,&?&? This is a Sapphire script&?&
+Which keyword is used to declare a new class in Sapphire?,class
+Which keyword is used to define a function within a Sapphire class?,def
+What is the conventional name for the entry point function in a Sapphire script?,"""Main"""
+"In Sapphire, how is an 'Identity Definition' (string literal) assigned without using quotes?",variable = IDENTITY_NAME
+Numerical values enclosed in double quotes are known in Sapphire as _____.,Inverted Integer Buffers
+"How does Sapphire treat a numerical value when it is enclosed in double quotes (e.g., ""500"")?",As a raw integer.
+What operator is used to stream data or commands to a system function in Sapphire?,The double left chevron $<<$.
+Which command is used to output text or variable data to the console?,sph::print
+What specific command terminates an 'sph::print' stream and appends a newline character?,"sph::end ""print"" (line)"
+How do you terminate an 'sph::print' stream without adding a newline character?,"sph::end ""print"" ()"
+What prefix character must be used at the start of a line to execute mathematical operations?,?
+Which command initiates a stream for mathematical calculations?,sph::math
+What is the specific syntax used to terminate an 'sph::math' stream?,"sph::end ""math"" (/? )"
+"In an 'sph::math' stream, what operation does the symbol `^` perform?",Bitwise XOR
+"In an 'sph::math' stream, what operation does the symbol `&` perform?",Bitwise AND
+Which Sapphire operator is used for the modulo operation?,%
+Which Sapphire operator is used for exponentiation (power)?,**
+"What is the result of the Sapphire math operation `? sph::math << ""17"" << % << ""5"" <<`?",$2$
+"What is the result of the Sapphire math operation `? sph::math << ""2"" << ** << ""10"" <<`?",$1024$
+"What is the result of the bitwise calculation `? sph::math << ""12"" << & << ""7"" <<`?",$4$
+"What is the result of the bitwise calculation `? sph::math << ""5"" << ^ << ""3"" <<`?",$6$
+Which command is used to retrieve system-level information like time or hostname?,sph::get
+What query string is passed to 'sph::get' to retrieve the current system time?,"""time"""
+What query string is passed to 'sph::get' to retrieve the current system date?,"""date"""
+What query string is passed to 'sph::get' to retrieve the current day of the week?,"""day"""
+Which 'sph::get' query is used to identify the host machine's name?,"""hostname"""
+Which 'sph::get' query is used to retrieve the name of the operating system?,"""os"""
+Which 'sph::get' query is used to obtain the current logged-in user's name?,"""username"""
+Which 'sph::get' query is used to generate a random numerical value?,"""random"""
+Which command is used to initiate a comparison between two values?,sph::cmp
+"In an 'sph::cmp' stream, which operator checks if two values are equal?",==
+"In an 'sph::cmp' stream, which operator checks if the first value is greater than the second?",gt
+Which command marks the beginning of a code block to be executed if a condition is true?,sph::if (start)
+Which command marks the beginning of the alternative code block in a conditional statement?,sph::if (else)
+What command is used to close an entire 'if' or 'if/else' block?,"sph::end ""if"" (stop)"
+Which command is used to specify the number of iterations for a loop?,sph::loop
+How do you define the start of the code block inside a loop?,"sph::end ""loop"" (start)"
+How do you define the end of the code block inside a loop?,"sph::end ""loop"" (stop)"
+Which command prompts the user for interactive input?,sph::input
+Which command is used to extract a value from the system stack and assign it to a variable?,sph::pop
+"If 'sph::input' is used, what is the next logical step to store that input in a variable called 'data'?","sph::pop ""data"""
+Which command is used to join multiple string segments or variables together?,sph::concat
+"After using 'sph::concat' to join strings, where is the resulting string stored?",On the system stack (retrieved via 'sph::pop').
+Which keyword is used to define and open a graphical interface window?,window
+"Inside a window block, which prefix is used to define a button element?",btn:
+"What do the first pair of brackets represent in a button definition: `btn: ( [x, y]; [w, h] )`?",The X and Y coordinates of the button's position.
+"What do the second pair of brackets represent in a button definition: `btn: ( [x, y]; [w, h] )`?",The width and height dimensions of the button.
+"According to Sapphire syntax rules, are indents required inside a 'class' block?","No, indents are not required in a class block."
+"According to Sapphire syntax rules, are indents required inside a 'def' block?","Yes, indents are required in a definition block."
+"What is the command to explicitly end a function named ""Main""?","sph::end ""Main"" (def)"
+Which single-character prefix is used for a standard Sapphire comment?,?
+Which delimiters are used for multi-line or block comments in Sapphire?,/* and */
+Which symbol is used for a comment that often appears at the top of a script or section?,#
+What delimiters are used to enclose a 'meta block' summary in a script?,&?&
+"In the math operation `? sph::math << width << / << ""2"" << + << height <<`, which operation is performed first?",The division ($width / 2$).
+How would you print the value of a variable named 'sys_node' followed by a newline?,"sph::print << sys_node << sph::end ""print"" (line)"
+How do you correctly end an 'sph::get' stream?,"sph::end ""get"" ()"
+How do you correctly end an 'sph::cmp' stream?,"sph::end ""cmp"" ()"
+"What is the purpose of explicit ending commands like `sph::end ""print"" (line)` in Sapphire?",To define the scope of the operation.
+"If `x = ""42""`, what does `sph::cmp << x << == << ""42"" <<` evaluate to?",TRUE
+"In Sapphire, what is the result of using 'sph::pop' without a preceding input or concat operation?",It retrieves the last item placed on the internal stack.
+"What does the code `sph::loop << ""5""` instruct the system to do?",Prepare a loop that will execute 5 times.
+"What is the effect of the command `sph::pop ""username""`?",It assigns the value at the top of the stack to the variable 'username'.
+Which system function is used to initialize the Vulkan engine window in Sapphire?,"window ""[Window Name]"""
+"In Sapphire, variables like `ACTIVE` or `ZEGA_NODE_V1` are referred to as _____.",Identity Definitions
+True or False: Identity definitions require quotation marks.,False.
+"To output '10 / 2 = 5', which command sequence calculates the '5'?","? sph::math << ""10"" << / << ""2"" << sph::end ""math"" (/? )"
+How is a multi-step math operation like $(100 / 5) + 2$ written in Sapphire?,"? sph::math << ""100"" << / << ""5"" << + << ""2"" <<"
+What is the syntax to end a concatenation stream?,"sph::end ""concat"" ()"
+Which component of the Sapphire language handles user interaction via the console?,sph::input
+What character separates the position brackets from the dimension brackets in a `btn:` definition?,The semi-colon (;).
+"In the script `TestAdvanced.sph`, how is the result of `sph::concat` retrieved?","Using `sph::pop ""tag""`."
+What is the primary role of the `sph::end` series of commands?,To act as terminal delimiters for stream-based functions.
+"What is the result of the bitwise calculation `? sph::math << ""500"" << ^ << ""10"" <<`?",$510$
+"What is the result of the bitwise calculation `? sph::math << ""500"" << & << ""10"" <<`?",$0$
+"How do you print a string literal ""Node Identity: "" followed by the variable `node_id` on one line?","sph::print << ""Node Identity: "" << node_id << sph::end ""print"" (line)"
+What is the purpose of the `?` character in the context of meta blocks or comments?,It identifies a line as a comment within meta blocks or script bodies.
+How are coordinate values represented within the `window` block elements?,"Within square brackets, e.g., `[10, 10]`."
+Which command query would you use to find the current day of the month?,"sph::get << ""date"""
+"In Sapphire v2, which command is used to display a user's machine hostname?","sph::get << ""hostname"""
+Which section of a Sapphire script is intended for high-level execution summaries?,The Meta Block (delimited by &?&).
+True or False: Inverted integer buffers are internally treated as strings by Sapphire.,False (they are treated as raw integers).
+What is the syntax for an 'else' conditional in Sapphire?,sph::if (else)
+How is a counter variable typically incremented inside a loop in Sapphire?,"? sph::math << counter << + << ""1"" << sph::end ""math"" (/? )"

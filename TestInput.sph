@@ -1,0 +1,39 @@
+# ============================================================
+#  ZEGA Sapphire — Interactive Input Demo
+#  Tests: sph::input, sph::pop, sph::cmp, sph::if
+# ============================================================
+
+class "InputDemo" {
+def "Main"():
+
+    sph::print << "=== Z-TEAM Input Demo ===" <<
+    sph::end "print" (line)
+
+    # ── Read a name from the user ────────────────────────────
+    sph::input << "Enter your name: " <<
+    sph::end "input" ()
+    sph::pop "username"
+
+    sph::print << "Hello, " << username << "!" <<
+    sph::end "print" (line)
+
+    # ── Read a number and check if it equals 7 ──────────────
+    sph::input << "Guess the magic number (1-10): " <<
+    sph::end "input" ()
+    sph::pop "guess"
+
+    sph::cmp << guess << == << "7" <<
+    sph::end "cmp" ()
+    sph::if (start)
+        sph::print << "CORRECT! The magic number IS 7!" <<
+        sph::end "print" (line)
+    sph::if (else)
+        sph::print << "Wrong! The magic number was 7." <<
+        sph::end "print" (line)
+    sph::end "if" (stop)
+
+    sph::print << "Goodbye, " << username << "!" <<
+    sph::end "print" (line)
+
+sph::end "Main" (def)
+}

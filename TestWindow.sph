@@ -1,0 +1,12 @@
+class "VulkanTest" {
+def "Main"():
+    sph::print << "Opening Vulkan Window..." << 
+	sph::end "print" (line)
+    window "ZOS Vulkan Engine" {
+        btn: ( [10, 10]; [100, 30] )
+		btn: ( [1, 30]; [10, 80] )
+    }
+    sph::print << "Window Opened!" << 
+	sph::end "print" (line)
+sph::end "Main" (def)
+}

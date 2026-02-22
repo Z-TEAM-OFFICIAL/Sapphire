@@ -1,0 +1,50 @@
+# ==========================================
+# ZEGA Sapphire: Advanced System Dashboard
+# ==========================================
+
+class "AdvancedSystem" {
+def "Main"():
+    # 1. Identity Definition
+    # 'sys_node' is a STRING "ZEGA_NODE_V1"
+    sys_node = ZEGA_NODE_V1
+    
+    # 2. Inverted Integer Buffers
+    # These are treated as RAW INTEGERS due to quotes
+    base_val = "500"
+    mod_val = "10"
+    
+    # 3. Stream Math Execution
+    # Calculates: (500 / 10) + 2
+    sph::print << "Calculating Core Parity..." <<
+    sph::end "print" (line)
+    
+    ? sph::math << base_val << / << mod_val << + << "2" <<
+    sph::end "math" (/? )
+    
+    sph::print << "XOR Test (500 ^ 10): " <<
+    sph::end "print" (line)
+    ? sph::math << "500" << ^ << "10" <<
+    sph::end "math" (/? )
+
+    sph::print << "AND Test (500 & 10): " <<
+    sph::end "print" (line)
+    ? sph::math << "500" << & << "10" <<
+    sph::end "math" (/? )
+    
+    # 4. Concatenation of String-Literals
+    # 'status' is the STRING "ACTIVE"
+    status = ACTIVE
+    
+    sph::print << "NODE: " << sys_node << 
+    sph::end "print" ()
+    sph::print << " | STATUS: " << status <<
+    sph::end "print" (line)
+
+sph::end "Main" (def)
+}
+&?&
+? This is a nice comment
+&?&
+/*
+This is also a comment
+*/

@@ -1,0 +1,124 @@
+# ============================================================
+#  ZEGA Sapphire v2 — Z-TEAM Feature Showcase
+#  Tests: loops, conditionals, input, concat, sph::get upgrades
+# ============================================================
+
+class "ZTeamShowcase" {
+def "Main"():
+
+    # ── Header ──────────────────────────────────────────────
+    sph::print << "================================" <<
+    sph::end "print" (line)
+    sph::print << "  Z-TEAM Sapphire v2 Showcase  " <<
+    sph::end "print" (line)
+    sph::print << "================================" <<
+    sph::end "print" (line)
+
+    # ── System Info (new sph::get queries) ──────────────────
+    sph::print << "User    : " <<
+    sph::get << "username" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "Machine : " <<
+    sph::get << "hostname" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "OS      : " <<
+    sph::get << "os" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "Date    : " <<
+    sph::get << "date" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "Time    : " <<
+    sph::get << "time" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "--------------------------------" <<
+    sph::end "print" (line)
+
+    # ── Extended Math: Modulo and Power ─────────────────────
+    sph::print << "17 % 5  = " <<
+    sph::end "print" ()
+    ? sph::math << "17" << % << "5" <<
+    sph::end "math" (/? )
+
+    sph::print << "2 ** 10 = " <<
+    sph::end "print" ()
+    ? sph::math << "2" << ** << "10" <<
+    sph::end "math" (/? )
+
+    sph::print << "--------------------------------" <<
+    sph::end "print" (line)
+
+    # ── Comparison: sph::cmp + sph::if ──────────────────────
+    x = "42"
+
+    sph::cmp << x << == << "42" <<
+    sph::end "cmp" ()
+    sph::if (start)
+        sph::print << "[IF] x == 42 : TRUE" <<
+        sph::end "print" (line)
+    sph::end "if" (stop)
+
+    sph::cmp << x << gt << "100" <<
+    sph::end "cmp" ()
+    sph::if (start)
+        sph::print << "[IF] x > 100 : TRUE" <<
+        sph::end "print" (line)
+    sph::if (else)
+        sph::print << "[IF] x > 100 : FALSE (x = " << x << ")" <<
+        sph::end "print" (line)
+    sph::end "if" (stop)
+
+    sph::print << "--------------------------------" <<
+    sph::end "print" (line)
+
+    # ── Loop: repeat N times ────────────────────────────────
+    sph::print << "Counting 1 to 5:" <<
+    sph::end "print" (line)
+
+    counter = "1"
+    sph::loop << "5" <<
+    sph::end "loop" (start)
+        sph::print << "  Tick " << counter <<
+        sph::end "print" (line)
+        ? sph::math << counter << + << "1" <<
+        sph::end "math" (/? )
+    sph::end "loop" (stop)
+
+    sph::print << "--------------------------------" <<
+    sph::end "print" (line)
+
+    # ── String Concat ────────────────────────────────────────
+    first  = ZEGA
+    second = _SAPPHIRE
+    sph::concat << first << second << "_v2" <<
+    sph::end "concat" ()
+    sph::pop "tag"
+
+    sph::print << "Concat result : " << tag <<
+    sph::end "print" (line)
+
+    sph::print << "--------------------------------" <<
+    sph::end "print" (line)
+
+    # ── Random number ────────────────────────────────────────
+    sph::print << "Random : " <<
+    sph::get << "random" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "================================" <<
+    sph::end "print" (line)
+    sph::print << "  Z-TEAM Build Complete." <<
+    sph::end "print" (line)
+
+sph::end "Main" (def)
+}

@@ -1,0 +1,54 @@
+# ==========================================
+# ZEGA Sapphire: Syntax Demonstration
+# ==========================================
+
+class "SyntaxDemo" {
+
+def "Main"():
+    # 1. Identity Definitions (No quotes required)
+    node_status = ACTIVE
+    node_id = ZEGA_NODE_V1
+
+    # 2. System Information Retrieval using Streams (<<)
+    sph::print << "Node Identity: " << node_id <<
+    sph::end "print" (line)
+
+    sph::print << "Status: " << node_status <<
+    sph::end "print" (line)
+
+    sph::print << "Timestamp: " <<
+    sph::get << "time" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    # 3. Inverted Integer Buffers (Numbers in quotes treated as raw integers)
+    val_a = "100"
+    val_b = "5"
+
+    # 4. Stream Math Execution (Prefix with '?' and use explicit math end)
+    # Calculates: (100 / 5) + 2
+    sph::print << "Calculating Core Parity: " <<
+    sph::end "print" ()
+
+    ? sph::math << val_a << / << val_b << + << "2" <<
+    sph::end "math" (/? )
+
+    # 5. Bitwise Operations (XOR and AND)
+    sph::print << "Security XOR Check (100 ^ 5): " <<
+    sph::end "print" ()
+
+    ? sph::math << "100" << ^ << "5" <<
+    sph::end "math" (/? )
+
+sph::end "Main" (def)
+}
+
+&?&
+? This meta block provides a summary of script execution.
+&?&
+
+/*
+  Sapphire utilizes explicit ending commands like 
+  sph::end "print" (line) and sph::end "math" (/? ) 
+  to define the scope of operations [1, 2].
+*/

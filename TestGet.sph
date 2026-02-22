@@ -1,0 +1,18 @@
+class "GetTest" {
+def "Main"():
+    sph::print << "Current Day: " <<
+    sph::get << "day" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "Current Date: " <<
+    sph::get << "date" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+
+    sph::print << "Current Time: " <<
+    sph::get << "time" <<
+    sph::end "get" ()
+    sph::end "print" (line)
+sph::end "Main" (def)
+}

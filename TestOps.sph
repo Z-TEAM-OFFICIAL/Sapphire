@@ -1,0 +1,18 @@
+class "Test" {
+def "Main"():
+    sph::print << "10 / 2 = " <<
+    sph::end "print" ()
+    ? sph::math << "10" << / << "2" <<
+    sph::end "math" (/? )
+
+    sph::print << "5 ^ 3 = " <<
+    sph::end "print" ()
+    ? sph::math << "5" << ^ << "3" <<
+    sph::end "math" (/? )
+
+    sph::print << "12 & 7 = " <<
+    sph::end "print" ()
+    ? sph::math << "12" << & << "7" <<
+    sph::end "math" (/? )
+sph::end "Main" (def)
+}
