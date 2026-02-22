@@ -1,2 +1,2 @@
 # ***Sapphire***
-The *Official* Sapphire Language Made By ****************Zega****************
+The *Official* Sapphire Language Made By **Zega**
